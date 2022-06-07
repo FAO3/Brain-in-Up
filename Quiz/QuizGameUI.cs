@@ -49,10 +49,6 @@ public class QuizGameUI : MonoBehaviour
         CreateCategoryButtons();
 
     }
-    /// <summary>
-    /// Method which populate the question on the screen
-    /// </summary>
-    /// <param name="question"></param>
     public void SetQuestion(Question question)
     {
         //set the question
@@ -158,10 +154,6 @@ public class QuizGameUI : MonoBehaviour
         _lifeImageList[remainingLife].color = Color.red;
     }
 
-    /// <summary>
-    /// IEnumerator to repeate the audio after some time
-    /// </summary>
-    /// <returns></returns>
     IEnumerator PlayAudio()
     {
         //if questionType is audio
@@ -242,10 +234,6 @@ public class QuizGameUI : MonoBehaviour
         _liftAnimation.StopPlayback();
     }
 
-
-    /// <summary>
-    /// Method to create Category Buttons dynamically
-    /// </summary>
     void CreateCategoryButtons()
     {
         //we loop through all the available catgories in our QuizManager
@@ -285,7 +273,6 @@ public class QuizGameUI : MonoBehaviour
 
     }
 
-    //this give blink effect [if needed use or dont use]
     IEnumerator BlinkImg(Image img)
     {
         for (int i = 0; i < 2; i++)
