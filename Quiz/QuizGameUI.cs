@@ -175,10 +175,6 @@ public class QuizGameUI : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Method assigned to the buttons
-    /// </summary>
-    /// <param name="btn">ref to the button object</param>
     void OnClick(Button btn)
     {
         if (_quizManager.GameStatus == GameStatus.PLAYING)
