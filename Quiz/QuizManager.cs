@@ -56,9 +56,6 @@ public class QuizManager : MonoBehaviour
         QuizGameUI.ButtonClick.AddListener(GameStatusNEXT);
     }
 
-    /// <summary>
-    /// Method used to randomly select the question form questions data
-    /// </summary>
     private void SelectQuestion()
     {
         //get the random number
@@ -103,11 +100,6 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Method called to check the answer is correct or not
-    /// </summary>
-    /// <param name="selectedOption">answer string</param>
-    /// <returns></returns>
     public bool Answer(string selectedOption)
     {
         //set default to false
@@ -166,16 +158,10 @@ public class QuizManager : MonoBehaviour
         _gameStatus = GameStatus.NEXT;
         _quizGameUI.GameOverPanel.SetActive(true);
         Time.timeScale = 0;
-
-        //fi you want to save only the highest score then compare the current score with saved score and if more save the new score
-        //eg:- if correctAnswerCount > PlayerPrefs.GetInt(currentCategory) then call below line
         if (_correctAnswerCount > PlayerPrefs.GetInt(_currentCategory))
         {
             PlayerPrefs.SetInt(_currentCategory, _correctAnswerCount); //save the score for this category
-        }
-
-        //Save the score
-            
+        }            
     }
 }
 
